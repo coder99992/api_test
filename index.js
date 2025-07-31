@@ -7,7 +7,8 @@ const routersMeta = require('./api/meta');
 const routersKimi = require('./api/kimi-k2');
 const routersQwen = require('./api/qwen');
 const routersDeepseek = require('./api/deepseek');
-//const routersText = require('./api/text-to-image');
+const routersQwenv2 = require('./api/qwen-v2');
+const routersGlm = require('./api/glm');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -50,6 +51,8 @@ app.use('/api', routersKimi);
 app.use('/api', routersQwen);
 app.use('/api', routersDeepseek);
 //app.use('/api', routersText);
+app.use('/api', routersGlm);
+app.use('/api', routersQwenv2);
 
 // Root endpoint
 app.get('/', (req, res) => {
