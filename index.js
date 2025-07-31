@@ -49,7 +49,7 @@ app.use('/api', routersMeta);
 app.use('/api', routersKimi);
 app.use('/api', routersQwen);
 app.use('/api', routersDeepseek);
-app.use('/api', routersText);
+//app.use('/api', routersText);
 
 // Root endpoint
 app.get('/', (req, res) => {
