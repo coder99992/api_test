@@ -7,7 +7,7 @@ const routersMeta = require('./api/meta');
 const routersKimi = require('./api/kimi-k2');
 const routersQwen = require('./api/qwen');
 const routersDeepseek = require('./api/deepseek');
-const routersText = require('./api/text-to-image');
+//const routersText = require('./api/text-to-image');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
