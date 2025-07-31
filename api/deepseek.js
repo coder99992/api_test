@@ -1,0 +1,37 @@
+const express = require('express');
+const { OpenAI } = require('openai');
+
+const router = express.Router();
+
+// Khởi tạo OpenAI client
+const client = new OpenAI({
+    baseURL: "https://router.huggingface.co/v1",
+    apiKey: process.env.HF_TOKEN,
+});
+
+// API endpoint cho chat ds
+router.post('/chat-deepseek', async (req, res) => {
+    const { message, model } = req.body;
+
+    if (!message) {
+        return res.status(400).json({ error: 'Message is required' });
+    }
+
+    try {
+        const chatCompletion = await client.chat.completions.create({
+            model: model || "deepseek-ai/DeepSeek-R1-0528:novita",
+            messages: [
+                {
+                    role: "user",
+                    content: message,
+                },
+            ],
+        });
+        res.json(chatCompletion.choices[0].message);
+    } catch (error) {
+        console.error('Error during chat completion:', error);
+        res.status(500).json({ error: 'Failed to get chat completion' });
+    }
+});
+
+module.exports = router;
