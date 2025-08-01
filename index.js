@@ -4,7 +4,7 @@ const path = require('path');
 const rateLimit = require('express-rate-limit');
 
 const routersMeta = require('./api/meta');
-const routersKimi = require('./api/kimi-k2');
+const routersKimi = require('./api/kimik2');
 const routersQwen = require('./api/qwen');
 const routersDeepseek = require('./api/deepseek');
 const routersQwenv2 = require('./api/qwen-v2');
