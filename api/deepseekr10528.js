@@ -6,7 +6,7 @@ const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 const OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions';
 
 // POST /api/qwen/chat
-router.post('/chat-deepseekr10548', async (req, res) => {
+router.post('/chat-deepseekr10528', async (req, res) => {
   const { message, model } = req.body;
 
   if (!message) {
