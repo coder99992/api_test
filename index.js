@@ -9,6 +9,7 @@ const routersQwen = require('./api/qwen');
 const routersDeepseek = require('./api/deepseek');
 const routersQwenv2 = require('./api/qwen-v2');
 const routersGlm = require('./api/glm');
+const routersVenice = require('./api/venice');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -50,7 +51,7 @@ app.use('/api', routersMeta);
 app.use('/api', routersKimi);
 app.use('/api', routersQwen);
 app.use('/api', routersDeepseek);
-//app.use('/api', routersText);
+app.use('/api', routersVenice);
 app.use('/api', routersGlm);
 app.use('/api', routersQwenv2);
 
