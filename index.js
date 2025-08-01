@@ -11,6 +11,7 @@ const routersQwenv2 = require('./api/qwen-v2');
 const routersGlm = require('./api/glm');
 const routersVenice = require('./api/venice');
 const routersGemma = require('./api/gemma');
+const routersTencent = require('./api/tencent');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -56,6 +57,7 @@ app.use('/api', routersVenice);
 app.use('/api', routersGlm);
 app.use('/api', routersQwenv2);
 app.use('/api', routersGemma);
+app.use('/api', routersTencent);
 
 // Root endpoint
 app.get('/', (req, res) => {
