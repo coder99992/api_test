@@ -55,42 +55,4 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`🚀 Server is running at http://localhost:${PORT}`);
-});// CORS middleware
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-    
-    if (req.method === 'OPTIONS') {
-        res.sendStatus(200);
-    } else {
-        next();
-    }
-});
-
-// Apply rate limiter to all /api routes
-app.use('/api', apiLimiter);
-
-// Use API routers
-app.use('/api', routersMeta);
-app.use('/api', routersKimi);
-app.use('/api', routersQwen);
-app.use('/api', routersDeepseek);
-app.use('/api', routersVenice);
-app.use('/api', routersGlm);
-app.use('/api', routersQwenv2);
-app.use('/api', routersGemma);
-app.use('/api', routersTencent);
-app.use('/api', routersDeepseek0);
-app.use('/api', routersMistral);
-
-// Root endpoint
-app.get('/', (req, res) => {
-    res.json({
-        message: 'Api_tnt',
-    });
-});
-
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`🚀 Server is running at http://localhost:${PORT}`);
 });
