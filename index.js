@@ -12,6 +12,7 @@ const routersGlm = require('./api/glm');
 const routersVenice = require('./api/venice');
 const routersGemma = require('./api/gemma');
 const routersTencent = require('./api/tencent');
+const routersDeepseek0 = require('./api/deepseek0');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -58,6 +59,7 @@ app.use('/api', routersGlm);
 app.use('/api', routersQwenv2);
 app.use('/api', routersGemma);
 app.use('/api', routersTencent);
+app.use('/api', routersDeepseek0);
 
 // Root endpoint
 app.get('/', (req, res) => {
